@@ -1,4 +1,4 @@
-name: Build JamesDSPManager-RE APK
+name: Build JamesDSPManager-RE Magisk Module
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
     paths:
       - 'Main/DSPManager/**'
       - 'Main/libjamesdsp/**'
+      - 'magisk_module/**'
       - '.github/workflows/build.yml'
   pull_request:
     branches: [ master, main ]
@@ -39,12 +40,6 @@ jobs:
         sdkmanager "platforms;android-29"
         sdkmanager "build-tools;29.0.3"
         
-    - name: Grant Execute Permission for Gradlew (if exists)
-      run: |
-        if [ -f "Main/DSPManager/gradlew" ]; then
-          chmod +x Main/DSPManager/gradlew
-        fi
-        
     - name: Build Native Libraries
       run: |
         cd Main/DSPManager
@@ -57,44 +52,69 @@ jobs:
         echo "sdk.dir=$ANDROID_HOME" > local.properties
         echo "ndk.dir=$ANDROID_NDK_HOME" >> local.properties
         
-    - name: Build Debug APK with Ant
+    - name: Build APK with Ant
       run: |
         cd Main/DSPManager
-        # Update project (creates build.xml if missing)
         android update project --path . --target android-29 --name JamesDSPManagerRE
-        # Build with Ant
         ant clean
         ant debug
         
-    - name: Sign APK (Optional)
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    - name: Prepare Magisk Module Structure
       run: |
-        cd Main/DSPManager
-        # This is a placeholder - you'd need to add signing keys as secrets
-        echo "APK built successfully"
+        mkdir -p magisk_release/system/priv-app/JamesDSPManagerRE
+        mkdir -p magisk_release/system/lib/soundfx
+        mkdir -p magisk_release/system/lib64/soundfx
         
-    - name: Upload APK Artifact
+        # Copy APK
+        cp Main/DSPManager/bin/*-debug.apk magisk_release/system/priv-app/JamesDSPManagerRE/JamesDSPManagerRE.apk
+        
+        # Copy native libraries
+        cp Main/DSPManager/libs/armeabi-v7a/libjamesdsp.so magisk_release/system/lib/soundfx/ 2>/dev/null || true
+        cp Main/DSPManager/libs/arm64-v8a/libjamesdsp.so magisk_release/system/lib64/soundfx/ 2>/dev/null || true
+        
+        # Copy module files
+        cp -r magisk_module/* magisk_release/
+        
+        # Set permissions
+        chmod 755 magisk_release/customize.sh
+        chmod 755 magisk_release/service.sh
+        chmod 755 magisk_release/META-INF/com/google/android/update-binary
+        
+    - name: Create Magisk Module ZIP
+      run: |
+        cd magisk_release
+        zip -r9 ../JamesDSPManager-RE-v10.0-RE.zip * -x '*.git*'
+        cd ..
+        ls -lh JamesDSPManager-RE-v10.0-RE.zip
+        
+    - name: Upload Magisk Module
       uses: actions/upload-artifact@v4
       with:
-        name: JamesDSPManager-RE-debug
-        path: Main/DSPManager/bin/*-debug.apk
-        if-no-files-found: error
+        name: JamesDSPManager-RE-Magisk-Module
+        path: JamesDSPManager-RE-v10.0-RE.zip
         
-    - name: Get APK Info
-      run: |
-        cd Main/DSPManager/bin
-        ls -lh *-debug.apk
-        
-    - name: Create Release (on tag)
+    - name: Create GitHub Release (on tag)
       if: startsWith(github.ref, 'refs/tags/v')
       uses: softprops/action-gh-release@v1
       with:
-        files: Main/DSPManager/bin/*-debug.apk
+        files: JamesDSPManager-RE-v10.0-RE.zip
         body: |
-          ## JamesDSPManager-RE Release
+          ## JamesDSPManager-RE Magisk Module
           
           **Version:** ${{ github.ref_name }}
           **Build Date:** ${{ github.event.head_commit.timestamp }}
+          **Maintainer:** Mohammad Adi
+          
+          ### Installation
+          1. Download the ZIP file
+          2. Flash via Magisk Manager
+          3. Reboot
+          4. Open JamesDSP Manager RE from launcher
+          
+          ### Requirements
+          - Android 5.0+ (API 21+)
+          - Magisk 20.4+
+          - ARM/ARM64 architecture
           
           ### Changes
           ${{ github.event.head_commit.message }}

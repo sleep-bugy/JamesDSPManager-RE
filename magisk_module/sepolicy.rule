@@ -1,0 +1,13 @@
+# JamesDSPManager-RE Magisk Module
+# SELinux context rules
+
+# Allow app to access audio HAL
+allow jamesdsp_app audio_device:chr_file { read write open ioctl };
+allow jamesdsp_app audioserver:binder { call transfer };
+
+# Allow reading/writing effect libraries
+allow jamesdsp_app system_file:file { read open getattr execute };
+allow jamesdsp_app vendor_file:file { read open getattr execute };
+
+# Allow service registration
+allow jamesdsp_app servicemanager:binder { call transfer };

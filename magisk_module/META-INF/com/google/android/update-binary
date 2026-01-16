@@ -1,0 +1,16 @@
+#!/sbin/sh
+# Magisk Module Installer - Update Binary
+# This script is a standard Magisk installer
+
+OUTFD=$2
+ZIPFILE=$3
+
+ui_print() {
+  echo -e "ui_print $1\nui_print" >> /proc/self/fd/$OUTFD
+}
+
+# Extract customize.sh and run it
+ui_print "Installing JamesDSPManager-RE..."
+unzip -o "$ZIPFILE" customize.sh -d /tmp
+chmod 755 /tmp/customize.sh
+. /tmp/customize.sh
