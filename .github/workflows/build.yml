@@ -52,10 +52,33 @@ jobs:
         echo "sdk.dir=$ANDROID_HOME" > local.properties
         echo "ndk.dir=$ANDROID_NDK_HOME" >> local.properties
         
+    - name: Create build configuration
+      run: |
+        cd Main/DSPManager
+        
+        # Create build.xml manually since 'android' tool is deprecated
+        cat > build.xml << 'EOF'
+        <?xml version="1.0" encoding="UTF-8"?>
+        <project name="JamesDSPManagerRE" default="help">
+            <property file="local.properties" />
+            <property file="ant.properties" />
+            <property environment="env" />
+            <condition property="sdk.dir" value="${env.ANDROID_HOME}">
+                <isset property="env.ANDROID_HOME" />
+            </condition>
+            <loadproperties srcFile="project.properties" />
+            <fail
+                message="sdk.dir is missing. Make sure to generate local.properties using 'android update project' or to inject it through the ANDROID_HOME environment variable."
+                unless="sdk.dir"
+            />
+            <import file="custom_rules.xml" optional="true" />
+            <import file="${sdk.dir}/tools/ant/build.xml" />
+        </project>
+        EOF
+        
     - name: Build APK with Ant
       run: |
         cd Main/DSPManager
-        android update project --path . --target android-29 --name JamesDSPManagerRE
         ant clean
         ant debug
         
