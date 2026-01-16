@@ -1,6 +1,8 @@
 id=jamesdsp_re
 name=JamesDSP Manager RE
-version=10.0-RE
+version=v10.0-RE
 versionCode=100
 author=Mohammad Adi (Based on JamesDSP by james34602)
-description=Advanced audio processing engine for Android. RE (Reengineered Edition) with modern UI and improvements.
+description=JamesDSPManager RE (Reengineered Edition) - Advanced audio processing engine for Android with modern UI and improvements.
+support=https://github.com/sleep-bugy/JamesDSPManager-RE
+updateJson=https://raw.githubusercontent.com/sleep-bugy/JamesDSPManager-RE/master/update.json

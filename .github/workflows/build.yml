@@ -48,21 +48,25 @@ jobs:
         
     - name: Prepare Magisk Module Structure
       run: |
-        mkdir -p magisk_release/system/priv-app/JamesDSPManagerRE
-        mkdir -p magisk_release/system/lib/soundfx
-        mkdir -p magisk_release/system/lib64/soundfx
+        # Create module structure matching original JamesDSP format
+        mkdir -p magisk_release/common/files/arm
+        mkdir -p magisk_release/common/files/x86  
+        mkdir -p magisk_release/common/files/JamesDSP/Convolver
+        mkdir -p magisk_release/common/files/JamesDSP/DDC
+        mkdir -p magisk_release/common/files/JamesDSP/liveprog
+        mkdir -p magisk_release/common/files/JamesDSP/Presets
         
         # Copy APK
-        cp Main/DSPManager/build/outputs/apk/debug/*.apk magisk_release/system/priv-app/JamesDSPManagerRE/JamesDSPManagerRE.apk
+        cp Main/DSPManager/build/outputs/apk/debug/*.apk magisk_release/common/files/JamesDSPManager.apk
         
-        # Copy native libraries
-        find Main/DSPManager/build/intermediates/ndkBuild -name "libjamesdsp.so" -exec cp {} magisk_release/system/lib/soundfx/ \; 2>/dev/null || true
-        find Main/DSPManager/build/intermediates/ndkBuild -name "libjamesdsp.so" -path "*/arm64-v8a/*" -exec cp {} magisk_release/system/lib64/soundfx/ \; 2>/dev/null || true
+        # Copy native libraries to proper arch folders
+        find Main/DSPManager/build/intermediates/ndkBuild -name "libjamesdsp.so" -path "*/armeabi-v7a/*" -exec cp {} magisk_release/common/files/arm/ \; 2>/dev/null || true
+        find Main/DSPManager/build/intermediates/ndkBuild -name "libjamesdsp.so" -path "*/x86/*" -exec cp {} magisk_release/common/files/x86/ \; 2>/dev/null || true
         
-        # Copy module files
+        # Copy module metadata and scripts
         cp -r magisk_module/* magisk_release/
         
-        # Set permissions
+        # Set executable permissions
         chmod 755 magisk_release/customize.sh
         chmod 755 magisk_release/service.sh
         chmod 755 magisk_release/META-INF/com/google/android/update-binary
