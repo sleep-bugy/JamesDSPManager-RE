@@ -1,78 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 The CyanogenMod Project
-     Copyright (C) 2015 The OmniROM Project
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+<!-- JamesDSPManager-RE - Modern Material Design 3 Color Palette -->
 <resources>
-  <color name="white">#ffffffff</color>
-  <color name="off_white">#ffdedede</color>
-  <color name="black">#ff000000</color>
-  <color name="grid_lines">#4fffffff</color>
-  <color name="cb">#88bbffff</color>
-  <color name="freq_hl">#2000ddff</color>
-  <color name="freq_hl2">#4033b5e5</color>
-  <color name="eq_red">#80ff0000</color>
-  <color name="eq_yellow">#80f0ff00</color>
-  <color name="eq_holo_bright">#8000ddff</color>
-  <color name="eq_holo_blue">#8033b5e5</color>
-  <color name="eq_holo_dark">#800099cc</color>
-
-  <color name="eq_reddark">#80ffffff</color>
-  <color name="eq_yellowdark">#80ffff00</color>
-  <color name="eq_holo_brightdark">#80ff0000</color>
-  <color name="eq_holo_bluedark">#80ff00ff</color>
+  <!-- ============================================= -->
+  <!-- Material Design 3 Color System -->
+  <!-- ============================================= -->
+  
+  <!-- Primary: Deep Purple-Blue (Modern Audio Theme) -->
+  <color name="md_theme_primary">#6750A4</color>
+  <color name="md_theme_primary_container">#EADDFF</color>
+  <color name="md_theme_on_primary">#FFFFFF</color>
+  <color name="md_theme_on_primary_container">#21005E</color>
+  
+  <!-- Secondary: Complementary Teal -->
+  <color name="md_theme_secondary">#625B71</color>
+  <color name="md_theme_secondary_container">#E8DEF8</color>
+  <color name="md_theme_on_secondary">#FFFFFF</color>
+  <color name="md_theme_on_secondary_container">#1E192B</color>
+  
+  <!-- Tertiary: Warm Accent -->
+  <color name="md_theme_tertiary">#7D5260</color>
+  <color name="md_theme_tertiary_container">#FFD8E4</color>
+  <color name="md_theme_on_tertiary">#FFFFFF</color>
+  <color name="md_theme_on_tertiary_container">#370B1E</color>
+  
+  <!-- Surface & Background (Dark Theme) -->
+  <color name="md_theme_surface">#1C1B1F</color>
+  <color name="md_theme_surface_variant">#49454F</color>
+  <color name="md_theme_on_surface">#E6E1E5</color>
+  <color name="md_theme_on_surface_variant">#CAC4D0</color>
+  <color name="md_theme_background">#1C1B1F</color>
+  <color name="md_theme_on_background">#E6E1E5</color>
+  
+  <!-- Outline & Borders -->
+  <color name="md_theme_outline">#938F99</color>
+  <color name="md_theme_outline_variant">#49454F</color>
+  
+  <!-- ============================================= -->
+  <!-- Audio-Specific Theme Colors -->
+  <!-- ============================================= -->
+  
+  <!-- Vibrant Audio Visualizer Colors -->
+  <color name="audio_waveform">#00E5FF</color>
+  <color name="audio_waveform_alt">#18FFFF</color>
+  <color name="audio_peak">#FF6E40</color>
+  <color name="audio_active">#4CAF50</color>
+  <color name="audio_inactive">#757575</color>
+  
+  <!-- Effect Status Colors -->
+  <color name="effect_enabled">#00E676</color>
+  <color name="effect_disabled">#616161</color>
+  <color name="effect_warning">#FFC107</color>
+  
+  <!-- Gradient Stops for Modern UI -->
+  <color name="gradient_start">#667eea</color>
+  <color name="gradient_end">#764ba2</color>
+  <color name="gradient_accent_start">#f093fb</color>
+  <color name="gradient_accent_end">#f5576c</color>
+  
+  <!-- ============================================= -->
+  <!-- Legacy Compatibility Colors -->
+  <!-- (Kept for backward compatibility with existing code) -->
+  <!-- ============================================= -->
+  
+  <color name="white">#FFFFFFFF</color>
+  <color name="off_white">#FFDEDEDE</color>
+  <color name="black">#FF000000</color>
+  
+  <!-- Equalizer Colors (Updated for MD3) -->
+  <color name="grid_lines">#4FFFFFFF</color>
+  <color name="cb">#88BBFFFF</color>
+  <color name="freq_hl">#2000DDFF</color>
+  <color name="freq_hl2">#4033B5E5</color>
+  
+  <!-- Equalizer Band Colors - Modern Palette -->
+  <color name="eq_red">#80FF5252</color>
+  <color name="eq_yellow">#80FFEB3B</color>
+  <color name="eq_holo_bright">#8000E5FF</color>
+  <color name="eq_holo_blue">#8029B6F6</color>
+  <color name="eq_holo_dark">#800097A7</color>
+  
+  <!-- Dark Theme Variants -->
+  <color name="eq_reddark">#80FFFFFF</color>
+  <color name="eq_yellowdark">#80FFFF00</color>
+  <color name="eq_holo_brightdark">#80FF0000</color>
+  <color name="eq_holo_bluedark">#80FF00FF</color>
   <color name="eq_holo_darkdark">#80000080</color>
-
-  <color name="eq_redlight">#80ffffff</color>
-  <color name="eq_yellowlight">#80cccccc</color>
+  
+  <!-- Light Theme Variants -->
+  <color name="eq_redlight">#80FFFFFF</color>
+  <color name="eq_yellowlight">#80CCCCCC</color>
   <color name="eq_holo_brightlight">#80999999</color>
   <color name="eq_holo_bluelight">#80666666</color>
   <color name="eq_holo_darklight">#80444444</color>
-
-  <color name="eq_redred">#80ef0000</color>
-  <color name="eq_yellowred">#80ef8000</color>
-  <color name="eq_holo_brightred">#80f7c785</color>
-  <color name="eq_holo_bluered">#802e8d32</color>
-  <color name="eq_holo_darkred">#802e4d32</color>
-
-  <color name="eq_redidea">#80ea322a</color>
-  <color name="eq_yellowidea">#80ff847c</color>
-  <color name="eq_holo_brightidea">#80fecea8</color>
-  <color name="eq_holo_blueidea">#8099b898</color>
-  <color name="eq_holo_darkidea">#802a363b</color>
-
-  <color name="cb_shader">#ffccffff</color>
-  <color name="cb_shader_alpha">#44ccffff</color>
-  <color name="action_bar_color">#ff0d0d0d</color>
-
-  <!-- Material -->
-  <color name="primary">#009688</color>
-  <color name="primaryred">#ef0000</color>
-  <color name="backgroundred">#2e7d32</color>
-  <color name="primary_dark">#00796b</color>
-  <color name="primaryred_dark">#9f0000</color>
-  <color name="accent">#009688</color>
-  <color name="accentred">#99ef0000</color>
-
-  <color name="primaryidea">#f67280</color>
-  <color name="backgroundidea">#355c7d</color>
-  <color name="primaryidea_dark">#c06c84</color>
-  <color name="accentidea">#99f8b195</color>
-
-  <color name="navigation_drawerdark">#80ffffff</color>
-  <color name="navigation_drawerlight">#80666666</color>
-  <color name="navigation_drawerdefault">#8003a9f4</color>
-  <color name="navigation_drawerred">#80f4ff81</color>
-  <color name="navigation_draweridea">#806c5b7b</color>
+  
+  <!-- Red/Green Theme -->
+  <color name="eq_redred">#80EF0000</color>
+  <color name="eq_yellowred">#80EF8000</color>
+  <color name="eq_holo_brightred">#80F7C785</color>
+  <color name="eq_holo_bluered">#802E8D32</color>
+  <color name="eq_holo_darkred">#802E4D32</color>
+  
+  <!-- Idea Theme -->
+  <color name="eq_redidea">#80EA322A</color>
+  <color name="eq_yellowidea">#80FF847C</color>
+  <color name="eq_holo_brightidea">#80FECEA8</color>
+  <color name="eq_holo_blueidea">#8099B898</color>
+  <color name="eq_holo_darkidea">#802A363B</color>
+  
+  <color name="cb_shader">#FFCCFFFF</color>
+  <color name="cb_shader_alpha">#44CCFFFF</color>
+  <color name="action_bar_color">#FF0D0D0D</color>
+  
+  <!-- ============================================= -->
+  <!-- Legacy Material Design 1 Colors (Updated) -->
+  <!-- ============================================= -->
+  
+  <!-- Default Theme - Modern Teal -->
+  <color name="primary">#00897B</color>
+  <color name="primary_dark">#00695C</color>
+  <color name="accent">#00BCD4</color>
+  
+  <!-- Red Theme - Updated -->
+  <color name="primaryred">#EF0000</color>
+  <color name="backgroundred">#2E7D32</color>
+  <color name="primaryred_dark">#9F0000</color>
+  <color name="accentred">#99EF0000</color>
+  
+  <!-- Idea Theme - Warm Palette -->
+  <color name="primaryidea">#F67280</color>
+  <color name="backgroundidea">#355C7D</color>
+  <color name="primaryidea_dark">#C06C84</color>
+  <color name="accentidea">#99F8B195</color>
+  
+  <!-- Navigation Drawer Modern Colors -->
+  <color name="navigation_drawerdark">#B31C1B1F</color>
+  <color name="navigation_drawerlight">#B3FFFFFF</color>
+  <color name="navigation_drawerdefault">#B36750A4</color>
+  <color name="navigation_drawerred">#B3F4FF81</color>
+  <color name="navigation_draweridea">#B36C5B7B</color>
+  
+  <!-- ============================================= -->
+  <!-- Semantic Colors (Accessibility) -->
+  <!-- ============================================= -->
+  
+  <color name="error">#F44336</color>
+  <color name="success">#4CAF50</color>
+  <color name="warning">#FF9800</color>
+  <color name="info">#2196F3</color>
+  
+  <!-- Surface Elevation Overlays -->
+  <color name="surface_overlay_1dp">#0DFFFFFF</color>
+  <color name="surface_overlay_2dp">#14FFFFFF</color>
+  <color name="surface_overlay_3dp">#1CFFFFFF</color>
+  <color name="surface_overlay_4dp">#1FFFFFFF</color>
+  <color name="surface_overlay_6dp">#24FFFFFF</color>
+  <color name="surface_overlay_8dp">#29FFFFFF</color>
+  
 </resources>

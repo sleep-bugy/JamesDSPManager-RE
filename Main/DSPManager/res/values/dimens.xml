@@ -1,18 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 The CyanogenMod Project
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
+<!-- JamesDSPManager-RE - Modern Material Design 3 Dimensions -->
 <resources>
-  <dimen name="bar_width">7dp</dimen>
+    
+    <!-- ============================================= -->
+    <!-- Material Design 3 Spacing System (8dp Grid) -->
+    <!-- ============================================= -->
+    
+    <!-- Base Spacing Units -->
+    <dimen name="spacing_xxs">2dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">24dp</dimen>
+    <dimen name="spacing_xxl">32dp</dimen>
+    <dimen name="spacing_xxxl">48dp</dimen>
+    
+    <!-- Content Padding -->
+    <dimen name="content_padding_horizontal">16dp</dimen>
+    <dimen name="content_padding_vertical">12dp</dimen>
+    
+    <!-- Card Margins & Padding -->
+    <dimen name="card_margin_horizontal">16dp</dimen>
+    <dimen name="card_margin_vertical">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    
+    <!-- Effect Control Dimensions -->
+    <dimen name="effect_card_height">80dp</dimen>
+    <dimen name="effect_icon_size">24dp</dimen>
+    <dimen name="effect_switch_padding">12dp</dimen>
+    
+    <!-- ============================================= -->
+    <!-- Typography Sizes (Material Design 3) -->
+    <!-- ============================================= -->
+    
+    <!-- Display -->
+    <dimen name="text_display_large">57sp</dimen>
+    <dimen name="text_display_medium">45sp</dimen>
+    <dimen name="text_display_small">36sp</dimen>
+    
+    <!-- Headline -->
+    <dimen name="text_headline_large">32sp</dimen>
+    <dimen name="text_headline_medium">28sp</dimen>
+    <dimen name="text_headline_small">24sp</dimen>
+    
+    <!-- Title -->
+    <dimen name="text_title_large">22sp</dimen>
+    <dimen name="text_title_medium">16sp</dimen>
+    <dimen name="text_title_small">14sp</dimen>
+    
+    <!-- Body -->
+    <dimen name="text_body_large">16sp</dimen>
+    <dimen name="text_body_medium">14sp</dimen>
+    <dimen name="text_body_small">12sp</dimen>
+    
+    <!-- Label -->
+    <dimen name="text_label_large">14sp</dimen>
+    <dimen name="text_label_medium">12sp</dimen>
+    <dimen name="text_label_small">11sp</dimen>
+    
+    <!-- ============================================= -->
+    <!-- Component Dimensions -->
+    <!-- ============================================= -->
+    
+    <!-- App Bar -->
+    <dimen name="app_bar_height">56dp</dimen>
+    <dimen name="app_bar_elevation">4dp</dimen>
+    
+    <!-- Navigation Drawer -->
+    <dimen name="navigation_drawer_width">280dp</dimen>
+    <dimen name="navigation_drawer_item_height">48dp</dimen>
+    <dimen name="navigation_drawer_item_padding">16dp</dimen>
+    
+    <!-- Bottom Navigation -->
+    <dimen name="bottom_nav_height">80dp</dimen>
+    <dimen name="bottom_nav_icon_size">24dp</dimen>
+    
+    <!-- FAB (Floating Action Button) -->
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    
+    <!-- Buttons -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_corner_radius">24dp</dimen>
+    <dimen name="button_padding_horizontal">24dp</dimen>
+    
+    <!-- ============================================= -->
+    <!-- Equalizer Specific Dimensions -->
+    <!-- ============================================= -->
+    
+    <!-- Equalizer Surface -->
+    <dimen name="equalizer_height">200dp</dimen>
+    <dimen name="equalizer_band_width">40dp</dimen>
+    <dimen name="equalizer_band_spacing">8dp</dimen>
+    <dimen name="equalizer_grid_spacing">20dp</dimen>
+    
+    <!-- Waveform Visualizer -->
+    <dimen name="waveform_height">120dp</dimen>
+    <dimen name="waveform_line_width">4dp</dimen>
+    <dimen name="waveform_bar_width">6dp</dimen>
+    
+    <!-- ============================================= -->
+    <!-- Touch Targets (Accessibility) -->
+    <!-- ============================================= -->
+    
+    <dimen name="touch_target_min">48dp</dimen>
+    <dimen name="touch_target_recommended">56dp</dimen>
+    
+    <!-- ============================================= -->
+    <!-- Elevation Levels -->
+    <!-- ============================================= -->
+    
+    <dimen name="elevation_0dp">0dp</dimen>
+    <dimen name="elevation_1dp">1dp</dimen>
+    <dimen name="elevation_2dp">2dp</dimen>
+    <dimen name="elevation_3dp">3dp</dimen>
+    <dimen name="elevation_4dp">4dp</dimen>
+    <dimen name="elevation_6dp">6dp</dimen>
+    <dimen name="elevation_8dp">8dp</dimen>
+    <dimen name="elevation_12dp">12dp</dimen>
+    <dimen name="elevation_16dp">16dp</dimen>
+    <dimen name="elevation_24dp">24dp</dimen>
+    
+    <!-- ============================================= -->
+    <!-- Corner Radii -->
+    <!-- ============================================= -->
+    
+    <dimen name="corner_radius_none">0dp</dimen>
+    <dimen name="corner_radius_xs">4dp</dimen>
+    <dimen name="corner_radius_sm">8dp</dimen>
+    <dimen name="corner_radius_md">12dp</dimen>
+    <dimen name="corner_radius_lg">16dp</dimen>
+    <dimen name="corner_radius_xl">20dp</dimen>
+    <dimen name="corner_radius_full">999dp</dimen>
+    
 </resources>
