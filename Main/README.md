@@ -1,3 +1,5 @@
-# Latest JamesDSP GUI and core source code
+# JamesDSPManager-RE GUI and Core Source Code
 
-Release under GPL license
+**RE (Reengineered Edition)** - Enhanced version maintained by Mohammad Adi
+
+Released under GPL license

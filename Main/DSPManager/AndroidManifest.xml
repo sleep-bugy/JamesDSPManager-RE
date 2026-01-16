@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="james.dsp" android:versionCode="91" android:versionName="9.1"><!--Add android:sharedUserId="android.uid.system" before release-->
+    package="james.dsp" android:versionCode="100" android:versionName="10.0-RE"><!--Add android:sharedUserId="android.uid.system" before release-->
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
 	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />

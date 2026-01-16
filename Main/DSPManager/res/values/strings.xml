@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">James DSP</string>
+  <string name="app_name">JamesDSP RE</string>
   <string name="headset_title">Headset</string>
   <string name="speaker_title">Speaker</string>
   <string name="bluetooth_title">Bluetooth</string>
@@ -130,8 +130,9 @@
   <string name="load_error_speaker">Load speaker.xml fail. File not found or permission denied</string>
   <string name="warn_null">File name must NOT be EMPTY, or load fail upon next preset load</string>
   <string name="help_title">Help</string>
-  <string name="help_text"><b>JamesDSP Guide</b>
+  <string name="help_text"><b>JamesDSP Manager RE Guide</b>
 \n\n
+<b>RE Edition</b> - Maintained by Mohammad Adi\n\n
 Getting Started\n\n
 For old users: Delete old JamesDSP Presets\n
 Note that JamesDSP presets are not compatible across versions—new versions of jDSP will crash if they attempt to load an old preset.  It is recommended to delete your old Presets folder before running a new jDSP version.\n
@@ -208,6 +209,8 @@ Reverberation\n\n
 Add some spatialness into the audio\n
 \n
     <b>Credit:</b>\n
-    GUI Author: Antti S. Lankila \n
+    RE Edition Maintainer: Mohammad Adi \n
+    Original GUI Author: Antti S. Lankila \n
+    Original Core Developer: james34602 \n
   </string>
 </resources>

@@ -1,8 +1,14 @@
-# JamesDSP (Cross-platform Audio Effect / Digital Signal Processing library)
-GUI is based on Omnirom DSP Manager and able to run on most Android devices from 5 to 10 include AOSP, Cyanogenmod, Huawei(arm64), LineageOS, Samsung and recent HTC. 
-This app include many cool features.
+# JamesDSPManager-RE (Reengineered Edition)
 
-This repo is a Android variant of JamesDSP, [JDSP4Linux](https://github.com/Audio4Linux/JDSP4Linux) uses core library from current repo.
+**A modernized fork of JamesDSP - Cross-platform Audio Effect / Digital Signal Processing library**
+
+This is the **RE (Reengineered Edition)** of JamesDSPManager, maintained by **Mohammad Adi**. This fork includes UI improvements, bug fixes, and enhancements while preserving the powerful DSP features of the original.
+
+GUI is based on Omnirom DSP Manager and runs on most Android devices from 5 to 10+ including AOSP, Cyanogenmod, Huawei(arm64), LineageOS, Samsung and recent HTC devices.
+
+### Original Project
+This is a fork of [JamesDSP](https://github.com/james34602/JamesDSPManager) originally created by james34602. 
+The Android variant serves as the core library that [JDSP4Linux](https://github.com/Audio4Linux/JDSP4Linux) also uses.
 
 ##### Features:
 
@@ -119,7 +125,8 @@ Also, it's good to customizing your own ROM or even port ROM with JamesDSP.
 Some device does require SELinux workaround to work correctly
 
 # Contact
-Better contact me by email. Send to james34602@gmail.com
+**Maintainer (RE Edition):** Mohammad Adi  
+**Original Author:** james34602 (james34602@gmail.com)
 
 # Terms and Conditions / License
 The engine frame is based on Antti S. Lankila's DSPManager.
